@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="@{http://www.thymeleaf.org}"
+th:replace="index:: Layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <section>
+        <div class="card mr-3">
+            <div class="card-body text-center">
+                  <img style="width:100px;height: 100px;" class="my_profile_picture" th:src="@{'/image/'+${user.imageUrl == null? 'profile.png':user.imageUrl}}" alt="profile-photo"/>
+                <h1 th:text="${user.name}"></h1>
+       <table class="table">
+                        <thead>
+                            <tr>
+                            <th scope="col">#ID</th>
+                            <th scope="col" >SCMUSR<span th:text="${user.id}"></span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <th scope="row">Email</th>
+                            <td><span th:text="${user.email}"></span></td>
+                          
+                            </tr>
+                            <tr>
+                            <th scope="row">Role</th>
+                            <td><span th:text="${user.role}"></span></td>
+                           
+                            </tr>
+                             <tr>
+                            <th scope="row">About</th>
+                            <td><span th:text="${user.about}"></span></td>
+                           
+                            </tr>
+                            
+                        </tbody>
+                        </table>
+                            </div>
+                            </div>
+    </section>
+</body>
+</html>
